@@ -1,0 +1,61 @@
+body {
+    background-image: url(images/bg.jpg);
+    background-size: 400px;
+}
+
+header {
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 50px;
+    color: #4e2e0f;
+}
+
+.hr1 {
+    position: relative;
+    top: -60px;
+    color: #4e2e0f;
+    width: 80%;
+}
+
+hr {
+    color: #4e2e0f;
+    width: 80%;
+}
+
+h2 {
+    padding-left: 3em;
+    color: #4e2e0f;
+    font-family: "Condiment";
+    font-size: 3em;
+    text-decoration: #4e2e0f underline;
+}
+
+ul {
+    position: relative;
+    top: -2.5em;
+    list-style-type: none;
+    padding-left: 6em;
+}
+
+.dish {
+    color: #4e2e0f;
+    font-family: 'Brush Script MT';
+    font-size: 3em;
+    float: left;
+    width: 25em;
+}
+
+.desc {
+    color: #55412c;
+    font-family: "Helvetica";
+    font-style: italic;
+    font-weight: bold;
+    width: 30em;
+    word-wrap: break-word;
+}
+
+.price {
+    float: right;
+    font-size: 0.8em;
+    padding-top: 0.5em;
+}

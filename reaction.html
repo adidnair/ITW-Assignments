@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            body {
+                font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+                background-color: blanchedalmond;
+            }
+
+            h1 {
+                padding-top: 0.3em;
+            }
+
+            #start {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30em;
+                height: 20em;
+                border-radius: 1em;
+                padding: 1em;
+                box-sizing: border-box;
+                text-align: center;
+                justify-content: center;
+                box-shadow: 0px 0.4em 0.4em 0px rgba(66, 66, 66, 0.212);
+                z-index: 1;
+                background-color: white;
+                padding-top: 2em;
+            }
+
+            #re {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30em;
+                height: 20em;
+                border-radius: 1em;
+                background-color: white;
+                padding: 1em;
+                box-sizing: border-box;
+                text-align: center;
+                box-shadow: 0px 0.4em 0.4em 0px rgba(66, 66, 66, 0.212);
+                z-index: 1;
+                display: none;
+            }
+
+            #play {
+                border: none;
+                height: 3em;
+                width: 10em;
+                border-radius: 0.5em;
+            }
+
+            #replay {
+                border: none;
+                height: 3em;
+                width: 10em;
+                border-radius: 0.5em;
+            }
+
+            #target {
+                width: 10em;
+                position: fixed;
+                display: none;
+            }
+        </style>
+    </head>
+
+
+
+
+<body>
+    <div id="start">
+        <h1>TEST YOUR REACTION TIME</h1>
+        <div style="height: 1em;"></div>
+        <button id="play" onclick="play()">START</button>
+        <div style="padding-top: 2em;">
+            <p style="display: inline-block; font-weight: bold;">Best time:</p><div style="width: 0.5em; display: inline-block;"></div><p id="hscore" style="display: inline-block;">Play to record best time.</p>
+        </div>
+    </div>
+
+    <div id="re">
+        <div style="padding-top: 3em;">
+            Score: <h1 id="score">score</h1>
+        </div>
+        <div style="height: 2em;"></div>
+        <button id="replay" onclick="replay()">REPLAY</button>
+    </div>
+    <img id="target" src="https://i.ibb.co/QY45xYb/7-IJC6c-Y1.png" onclick="gameover()">
+
+
+
+
+
+
+    <script>
+        var init = 0;
+        var high = 1000000000.0;
+
+        function play() {
+            document.getElementById("start").style.display = "none";
+            document.getElementById("target").style.top = `${Math.floor(Math.random() * 77)}%`;
+            document.getElementById("target").style.left = `${Math.floor(Math.random() * 89)}%`;
+            init = new Date().getTime();
+            show();
+        }
+
+        function show() {
+            document.getElementById("target").style.display = "inline-block";
+        }
+
+        function gameover() {
+            document.getElementById("target").style.display = "";
+            var final = new Date();
+            var score = final.getTime() - init;
+            score = parseFloat(score);
+            if (score < high) {
+                high = score;
+                document.getElementById("hscore").innerHTML = Math.floor(high/1000) + "s " + high % 1000 + "ms";
+            }
+            document.getElementById("score").innerHTML = Math.floor(score/1000) + "s " + score % 1000 + "ms";
+            document.getElementById("re").style.display = "inline-block";
+        }
+
+        function replay() {
+            document.getElementById("start").style.display = "";
+            document.getElementById("re").style.display = "";
+        }
+    </script>
+</body>
+</html>

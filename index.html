@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+<html class="dark">
+
+<head><style>
+    .dark {
+        --c: white;
+        --bgc: rgb(12, 12, 12);
+        --hrc: rgb(37, 37, 37);
+        --ic: rgb(230, 230, 230);
+        --ibgc: rgb(56, 56, 56);
+        --bbgc: rgb(81, 81, 255);
+        --src: "boo.png";
+    }
+
+    .light {
+        --c: black;
+        --bgc: aquamarine;
+        --hrc: rgb(219, 219, 219);
+        --ic: black;
+        --ibgc: rgb(68, 255, 193);
+        --bbgc: lightgreen;
+        --src: "boo1.png";
+    }
+
+    * {
+        transition: background-color 0.6s ease, color 1s ease;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        color: var(--c);
+        background-color: var(--bgc);
+    }
+
+    h3 {
+        color: gray;
+    }
+
+    hr {
+        color: var(--hrc);
+    }
+
+    input {
+        color: var(--ic);
+        background-color: var(--ibgc);
+        border: grey;
+        padding: 0.5em;
+        font-size: 1.4em;
+    }
+
+    button {
+        background-color: var(--bbgc);
+        border: none;
+        color: var(--ic);
+        padding: 0.5em;
+        font-size: 1.4em;
+    }
+
+    #i16 input {
+        margin: 2em
+    }
+</style></head>
+
+<body>
+    <h1 style="padding-top: 2em; padding-bottom: 2em;">Aditya Nair (2020KUCP1078) <br><br> ITW Assignment</h1>
+    <hr>
+    <h3>Q.1 Use JavaScript to calculate the sum of first 10 natural nos.</h3>
+    <h2 id="out1">Output 1</h2>
+    <hr>
+    <h3>Q.2 Use JavaScript program to add all numbers in between any two given numbers.</h3>
+    <label for="2no1">First number:</label><br>
+    <input type="number" id="2no1" name="2no1"><br><br>
+    <label for="2no2">Last number:</label><br>
+    <input type="number" id="2no2" name="2no2"><br><br>
+    <button type="button" onclick="func2()">Submit</button>
+    <h2 id="out2">Output 2</h2>
+    <hr>
+    <h3>Q.3 Use JavaScript program to display table of 5.</h3>
+    <h2 id="out3">Output 3</h2>
+    <hr>
+    <h3>Q.4 Use JavaScript program to display table of any given number.</h3>
+    <input type="number" id="i4" name="i4">
+    <button type="button" onclick="func4()">Submit</button> <br><br>
+    <h2 id="out4">Output 4</h2>
+    <hr>
+    <h3>Q.5 Use JavaScript program to add all digits form given value. (for ex. 123 = 6)</h3>
+    <input type="number" id="i5" name="i5">
+    <button type="button" onclick="func5()">Submit</button> <br><br>
+    <h2 id="out5">Output 5</h2>
+    <hr>
+    <h3>Q.6 Use JavaScript program to calculate the reverse of the given number.</h3>
+    <input type="number" id="i6" name="i6">
+    <button type="button" onclick="func6()">Submit</button> <br><br>
+    <h2 id="out6">Output 6</h2>
+    <hr>
+    <h3>Q.7 Use JavaScript code to display even numbers between 0 to 10.</h3>
+    <h2 id="out7">Output 7</h2>
+    <hr>
+    <h3>Q.8 Use JavaScript code to display all odd numbers between any two given numbers.</h3>
+    <label for="8no1">First number:</label><br>
+    <input type="number" id="8no1" name="8no1"><br><br>
+    <label for="8no2">Last number:</label><br>
+    <input type="number" id="8no2" name="8no2"><br><br>
+    <button type="button" onclick="func8()">Submit</button>
+    <h2 id="out8">Output 8</h2>
+    <hr>
+    <h3>Q.9 Use JavaScript code to display all numbers in between 1 and 30 which are divisible by 3.</h3>
+    <h2 id="out9">Output 9</h2>
+    <hr>
+    <h3>Q.10 Use JavaScript code to display all numbers in between any two given numbers which are not
+        divisible by 3.</h3>
+    <label for="10no1">First number:</label><br>
+    <input type="number" id="10no1" name="10no1"><br><br>
+    <label for="10no2">Last number:</label><br>
+    <input type="number" id="10no2" name="10no2"><br><br>
+    <button type="button" onclick="func10()">Submit</button>
+    <h2 id="out10">Output 10</h2>
+    <hr>
+    <h3>Q.11 Use JavaScript code to calculate double of the given number. (Event based)</h3>
+    <input type="number" id="i11" name="i11">
+    <button type="button" id="b11">Submit</button> <br><br>
+    <h2 id="out11">Output 11</h2>
+    <hr>
+    <h3>Q.12 Use JavaScript code to accept a day and checks whether is a weekend or a working day.</h3>
+    <input id="i12" name="i12">
+    <button type="button" onclick="func12()">Submit</button> <br><br>
+    <h2 id="out12">Output 12</h2>
+    <hr>
+    <h3>Q.13 Use JavaScript code to calculate Fibonacci Series up to N terms. Where N is any given number.</h3>
+    <input type="number" id="i13" name="i13">
+    <button type="button" onclick="func13()">Submit</button> <br><br>
+    <h2 id="out13">Output 13</h2>
+    <hr>
+    <h3>Q.14 Use JavaScript code to calculate square and cube of the number.</h3>
+    <input type="number" id="i14" name="i14">
+    <button type="button" onclick="func14()">Submit</button> <br><br>
+    <h2 id="out14">Output 14</h2>
+    <hr>
+    <h3>Q.15 Use JavaScript code using mouse event so that by moving the mouse pointer over the text, the
+        image should display.</h3>
+    <div style="width: 15.7em; margin:0 auto;" id="i15"><h2>PLACE CURSOR HERE!</h2></div>
+    <img src="https://i.imgur.com/gaRaaGV.png" id="img15" style="width: 20em;">
+    <hr>
+    <h3>Q.16 Use JavaScript program to find greatest no. from any three given nos.</h3>
+    <div id="i16">
+        <input type="number" id="i16a" name="i16a">
+        <input type="number" id="i16b" name="i16b">
+        <input type="number" id="i16c" name="i16c">
+    </div>
+    <button type="button" onclick="func16()">Submit</button> <br><br>
+    <h2 id="out16">Output 16</h2>
+    <hr>
+    <h3>Q.17 Use JavaScript to calculate the sum of first N natural nos., where N is a any given no.</h3>
+    <input type="number" id="i17" name="i17">
+    <button type="button" onclick="func17()">Submit</button> <br><br>
+    <h2 id="out17">Output 17</h2>
+    <hr>
+    <h3>Q.18 Use a JavaScript to change background color of the document by using mouseover event of
+        button.</h3>
+    <button type="button" id="i18"">CHANGE COLOUR</button> <br><br>
+    <hr>
+    <h3>Q.19 Use a JavaScript to check whether the given text is number or not.</h3>
+    <input id="i19" name="i19">
+    <button type="button" onclick="func19()">Submit</button> <br><br>
+    <h2 id="out19">Output 19</h2>
+    <hr>
+    <h3>Q.20 Use a JavaScript to check whether the given no. is +ve or –ve or zero.</h3>
+    <input type="number" id="i20" name="i20">
+    <button type="button" onclick="func20()">Submit</button> <br><br>
+    <h2 id="out20">Output 20</h2>
+</body>
+
+<!-- JavaScript -->
+<script>
+    var o1 = 0;
+    for (var i = 1; i < 11; i++) {
+        o1 += i;
+    }
+    document.getElementById("out1").innerHTML = "Sum of first 10 natural numbers = " + o1;
+
+    function func2() {
+        var x2 = +document.getElementById("2no1").value;
+        var y2 = +document.getElementById("2no2").value;
+        if (x2 > y2) {
+            document.getElementById("out2").innerHTML = "First number can't be greater than the second.";
+        }
+        else {
+            var z2 = 0;
+            while (x2 <= y2) {
+                z2 += x2;
+                x2++;
+            }
+            document.getElementById("out2").innerHTML = "Sum of numbers between " + document.getElementById("2no1").value + " and " + y2 + " is " + z2 + ".";
+        }
+    }
+
+    document.getElementById("out3").innerHTML = "";
+    for (var i = 1; i <= 10; i++) {
+        document.getElementById("out3").innerHTML += "5 × " + i + " = " + 5*i + "<br>";
+    }
+
+    function func4() {
+        var x4 = +document.getElementById("i4").value;
+        document.getElementById("out4").innerHTML = "";
+        for (var i = 1; i <= 10; i++) {
+            document.getElementById("out4").innerHTML += x4 + " × " + i + " = " + x4*i + "<br>";
+        }
+    }
+
+    function func5() {
+        var o5 = 0;
+        var x5 = document.getElementById("i5").value;
+        var i = x5.charAt(0) == '-' ? 1 : 0;
+        for (; i < x5.length; i++) {
+            o5 += +x5.charAt(i);
+        }
+        document.getElementById("out5").innerHTML = "Sum of digits of " + x5 + " is " + o5 + ".";
+    }
+
+    function func6() {
+        var o6 = "";
+        var x6 = document.getElementById("i6").value;
+        for (var i = --x6.length; i >= 0; i--) {
+            o6 += x6.charAt(i);
+        }
+        document.getElementById("out6").innerHTML = "Reverse of " + x6 + " is " + o6 + ".";
+    }
+
+    document.getElementById("out7").innerHTML = "Even numbers between 0 and 10 are";
+    for (var i = 0; i <= 5; i++ ) {
+        document.getElementById("out7").innerHTML += ", " + 2*i;
+    }
+    document.getElementById("out7").innerHTML += "."    
+
+    function func8() {
+        var x8 = +document.getElementById("8no1").value;
+        var y8 = +document.getElementById("8no2").value;
+        if (x8 > y8) {
+            document.getElementById("out8").innerHTML = "First number can't be greater than the second.";
+        }
+        else {
+            document.getElementById("out8").innerHTML = "Odd numbers between " + x8 + " and " + y8 + " are";
+            x8 += (x8 % 2 == 0);
+            while (x8 <= y8) {
+                document.getElementById("out8").innerHTML += ", " + x8;
+                x8 += 2;
+            }
+            document.getElementById("out8").innerHTML += ".";
+        }
+    }
+
+    document.getElementById("out9").innerHTML = "Numbers between 1 and 30 that are multiples of 3 are";
+    for (var i = 3; i <= 30; i += 3)
+        document.getElementById("out9").innerHTML += ", " + i;
+    document.getElementById("out9").innerHTML += ".";
+
+    function func10() {
+        var x10 = +document.getElementById("10no1").value;
+        var y10 = +document.getElementById("10no2").value;
+        if (x10 > y10) {
+            document.getElementById("out10").innerHTML = "First number can't be greater than the second.";
+        }
+        else {
+            document.getElementById("out10").innerHTML = "Numbers between " + x10 + " and " + y10 + " that are not multiples of 3 are";
+            while (x10 <= y10) {
+                if (x10 % 3 != 0)
+                    document.getElementById("out10").innerHTML += ", " + x10;
+                x10++;
+            }
+            document.getElementById("out10").innerHTML += ".";
+        }
+    }
+
+    document.getElementById("b11").addEventListener("click", func11);
+    function func11() {
+        x11 = document.getElementById("i11").value;
+        document.getElementById("out11").innerHTML = "Double of " + x11 + " is " + 2*x11 + ".";
+    }
+
+    function func12() {
+        var x12 = document.getElementById("i12").value;
+        x12 = x12.toLowerCase();
+        if (['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].includes(x12))
+            document.getElementById("out12").innerHTML = x12.charAt(0).toUpperCase() + x12.slice(1) + " is a working day.";
+        else if (['saturday', 'sunday'].includes(x12))
+            document.getElementById("out12").innerHTML = x12.charAt(0).toUpperCase() + x12.slice(1) + " is a weekend day.";
+        else
+            document.getElementById("out12").innerHTML = x12.charAt(0).toUpperCase() + x12.slice(1) + " is not a day.";
+    }
+
+    function func13() {
+        var x13 = +document.getElementById("i13").value;
+        var ia = 0
+        var ib = 1;
+        document.getElementById("out13").innerHTML = "Fibonacci series upto " + x13 + " terms: 0";
+        for(var i = 1; i < x13; i++) {
+            document.getElementById("out13").innerHTML += ", " + ib;
+            ib += ia;
+            ia = ib - ia;
+        }
+    }
+
+    function func14() {
+        var x14 = +document.getElementById("i14").value;
+        document.getElementById("out14").innerHTML = x14 + "² = " + Math.pow(x14,2) + ", " + x14 + "³ = " + Math.pow(x14,3);
+    }
+
+    document.getElementById("img15").style.visibility = "hidden";
+    document.getElementById("i15").addEventListener("mouseover", function(){document.getElementById("img15").style.visibility = "visible";});
+    document.getElementById("i15").addEventListener("mouseout", function(){document.getElementById("img15").style.visibility = "hidden";});
+
+    function func16() {
+        var x16a = +document.getElementById("i16a").value;
+        var x16b = +document.getElementById("i16b").value;
+        var x16c = +document.getElementById("i16c").value;
+        var ans = x16a > x16b ? (x16a > x16c ? x16a : x16c) : (x16b > x16c ? x16b : x16c);
+        document.getElementById("out16").innerHTML = "Greatest number is " + ans + ".";
+    }
+
+    function func17() {
+        var x17 = +document.getElementById("i17").value;
+        document.getElementById("out17").innerHTML = "Sum of first " + x17 + " natural numbers is " + x17*(x17 + 1)/2 + ".";
+    }
+
+    document.getElementById("i18").addEventListener("mouseover", func18);
+
+    function func18() {
+        document.body.classList.toggle("light");
+    }
+
+    function func19() {
+        var x19 = document.getElementById("i19").value;
+        var regex=/^[+-]?(\d*\.\d+|\d+)$/;   
+        document.getElementById("out19").innerHTML = x19.match(regex) ? x19 + " is a number." : x19 + " is not a number.";
+    }
+
+    function func20() {
+        var x20 = document.getElementById("i20").value;
+        document.getElementById("out20").innerHTML = x20 + " is " + ((+x20 != 0) ? (+x20 > 0 ? "positive." : "negative.") : "zero.");
+    }
+</script>
+
+</html>
